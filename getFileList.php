@@ -4,8 +4,6 @@
 
 $filelist = file_get_contents('http://www.pu-kumamoto.ac.jp/~pwr/csv/All/');
 
-//テスト出力
-
 preg_match_all('/"[0-9]{8}\.csv"/', $filelist, $match);
 
 $getNumbers = 0;
@@ -13,7 +11,7 @@ $getNumbers = 0;
 foreach ($match[0] as $key) {
         $key = str_replace('"', '', $key);
 
-        //exsist check
+        //ファイルが既にある場合は実行しない
         if(!file_exists('./files/'.$key)){
                 $file = fopen('./files/'.$key ,"w");
                 fwrite($file, $filelist);
