@@ -1,5 +1,7 @@
 <?php
 
+//このスクリプトはコマンドラインやcronで呼び出されることを前提にコーディングされています
+
 //ファイルリストを取ってくる 
 
 $filelist = file_get_contents('http://www.pu-kumamoto.ac.jp/~pwr/csv/All/');
